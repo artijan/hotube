@@ -1,0 +1,42 @@
+.search__form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 60px;
+  background-color: transparent;
+  border: transparent;
+
+  input {
+    all: unset;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: black;
+    font-size: 16px;
+    color: white;
+    &:focus {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  button {
+    all: unset;
+    padding: 11px 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: grey;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  .search__video {
+    width: 400px;
+  }
+}

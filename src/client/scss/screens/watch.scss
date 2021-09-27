@@ -1,0 +1,101 @@
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  .title {
+    font-size: 40px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  .subInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba($color: #ffffff, $alpha: 0.8);
+    .view {
+      margin-left: 16px;
+    }
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  margin-top: 40px;
+  .userLink {
+    display: flex;
+
+    align-items: center;
+    .userAvatar {
+      width: 70px;
+      height: 70px;
+      background-color: whitesmoke;
+      border-radius: 50%;
+    }
+    .userName {
+      margin-left: 16px;
+    }
+  }
+  .description {
+    margin-top: 16px;
+  }
+}
+
+.video__textarea {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 40px 0px;
+  .video__textarea-form {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    outline: none;
+  }
+}
+
+.video__comments {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin: 0 auto;
+
+  .video__comment-detail {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    .userAvatar {
+      width: 40px;
+      height: 40px;
+      background-color: whitesmoke;
+      border-radius: 50%;
+    }
+    .video__comment-user {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      .userName {
+        font-size: 12px;
+        margin-bottom: 8px;
+        font-weight: 800;
+      }
+      .video__comment {
+        color: whitesmoke;
+        font-size: 18px;
+      }
+    }
+    .deleteBtn {
+      margin-left: 12px;
+      cursor: pointer;
+    }
+  }
+}
