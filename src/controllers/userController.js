@@ -178,10 +178,11 @@ export const postEdit = async (req, res) => {
     file,
   } = req;
 
+  const isHeroku = process.env.NODE_ENV === "production";
   const updatedUser = await User.findByIdAndUpdate(
     _id,
     {
-      avatarUrl: file ? file.path : avatarUrl,
+      avatarUrl: file ? (isHeroku ? file.location : file.path) : avatarUrl,
       name,
       email,
       username,
@@ -191,6 +192,10 @@ export const postEdit = async (req, res) => {
   );
   req.session.user = updatedUser;
   req.flash("success", "프로필이 변경되었습니다.");
+  res.header("Access-Control-Allow-Origin", "https://hotubee.s3.amazonaws.com");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Cross-Origin-Embedder-Policy", "require-corp");
+  res.header("Cross-Origin-Opener-Policy", "same-origin");
   return res.redirect("/users/edit");
 };
 

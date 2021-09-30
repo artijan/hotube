@@ -3,7 +3,7 @@ extends base
 block content
    div#videoContainer(data-id=video._id data-name=video.owner.name data-url=video.owner.avatarUrl)
       div.gradient
-      video(src="/" + video.fileUrl)
+      video(src=video.fileUrl)
       div#videoControls.hide
          div.videoControls__time 
             div.time-text
@@ -30,7 +30,7 @@ block content
          span.view=`시청수 ${video.meta.views} 회`
    div.userInfo 
       a(href=`/users/${video.owner._id}`).userLink
-         img(src="/" + video.owner.avatarUrl).userAvatar
+         img(src=video.owner.avatarUrl).userAvatar
          span.userName=video.owner.name
       span.description=video.description
    br
@@ -47,7 +47,7 @@ block content
    div.video__comments
       each comment in video.comments.reverse()
          div.video__comment-detail#video__comment-detail(data-id=comment.id)
-            img(src="/" + video.owner.avatarUrl).userAvatar
+            img(src=video.owner.avatarUrl).userAvatar
             div.video__comment-user
                span.userName=video.owner.name
                span.video__comment=comment.text

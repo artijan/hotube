@@ -37,6 +37,9 @@ app.use(
   express.static("node_modules/@ffmpeg/core/dist")
 );
 app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://hotubee.s3.amazonaws.com");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
+  res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
   res.header("Cross-Origin-Embedder-Policy", "require-corp");
   res.header("Cross-Origin-Opener-Policy", "same-origin");
   next();
